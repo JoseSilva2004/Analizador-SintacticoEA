@@ -1,4 +1,3 @@
-# utils/tokenizer.py
 from tensorflow.keras.preprocessing.text import Tokenizer
 import re
 

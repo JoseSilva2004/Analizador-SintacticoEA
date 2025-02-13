@@ -1,4 +1,3 @@
-# data/generate_data.py
 import pandas as pd
 
 def load_data_from_csv(file_path):
