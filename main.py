@@ -40,7 +40,7 @@ def predecir():
 
 # Configuración de la ventana
 root = tk.Tk()
-root.title("Clasificador de Expresiones Matemáticas")
+root.title("Clasificador de Expresiones Algebraicas")
 root.geometry("600x400")
 root.configure(bg="#2c3e50")
 
