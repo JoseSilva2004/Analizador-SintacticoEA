@@ -27,7 +27,7 @@ Para correr el proyecto deberá instalar las siguientes librerias:
 4. para correr el proyecto ejecutas el siguiente comando:
 \
 \
-`python main.py`
+`python app.py`
 
 ## Documentación adicional
 
