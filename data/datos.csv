@@ -78,7 +78,7 @@ x^4 - 3x^3 - 2x^2 - x - 5,polinomio_resta
 x^9 + 2x^7 - x^5 + 3x^3 - 2x,polinomio_resta
 4x^3 - 3x^3 - x - 5,polinomio_resta
 x^6 - 2x^3 - 4x^2 - x - 6,polinomio_resta
-5x^3 - 3x^2 - 5,polinomio_resta
+5x^3 - 3x^2 - x - 5,polinomio_resta
 3x^8 - 3x^2 - 2x - 5,polinomio_resta
 x^5 - 3x^4 - 2x^2 - 2x - 4,polinomio_resta
 x^10 + x^8 + x^6 + x^4 + x^2 + 1,polinomio_suma
@@ -172,10 +172,10 @@ x^5 / 6x^3y / 2xy^7 / y^4 / x^4y / 5xy^2 / 9x^3y^5,polinomio_division
 x^3 + 5x^2y / 4xy^3 * y^2,polinomio_ninguna  
 x^4 + 7x^5y / 6xy^2 * y^3 - x^2y,polinomio_ninguna  
 x + 3x^2y / 8xy^4 * y^6 + 5xy^3,polinomio_ninguna  
-x^6 + 2x^3y / 9xy^5 * y^2 - x^4y^3 + 7xy,polinomio_ninguna  
-x^2 + 4x^7y / 5xy^3 * y^4 - 8x^3y^2 + xy,polinomio_ninguna  
+x^6 + 2x^3y + 9xy^5 - y^2 - x^4y^3 + 7xy,polinomio_ninguna  
+x^2 + 4x^7y - 5xy^3 + y^4 - 8x^3y^2 + xy,polinomio_ninguna  
 x^8 + 3x^4y / 7xy^2 * y^5 + x^2y - 6xy^3,polinomio_ninguna  
-x^5 + x^2y / 6xy^6 * y^3 - 9x^3y^2 + 2xy^4,polinomio_ninguna  
+x^5 + x^2y + 6xy^6 + y^3 - 9x^3y^2 - 2xy^4,polinomio_ninguna  
 2x^3 * 9x^5y / 8xy^2 * y^7 - 5xy^3 + x^4y,polinomio_ninguna  
 3x^7 - 2x^6y * 3xy^4 * y^5 + 4x^2y^3 / 7xy,polinomio_ninguna  
 7x^9 + x^3y / 5xy^2 * y^6 - 8x^4y^3 / 2xy^7,polinomio_ninguna  
