@@ -53,26 +53,25 @@ root.configure(bg="#2c3e50")
 expresiones, etiquetas = None, None
 model, tokenizer, max_len, tipo_to_index, operacion_to_index = None, None, None, None, None
 
-# Cargar el GIF animado
-gif_path = "matematica.gif"  # Ruta del GIF
-gif = Image.open(gif_path)
+# Cargar imágenes (primero la estática)
+imagen_estatica = ImageTk.PhotoImage(Image.open("matematica.jpg"))  # Imagen fija
+gif = Image.open("matematica.gif")  # Cargar el GIF
+frames = [ImageTk.PhotoImage(frame.convert("RGBA")) for frame in ImageSequence.Iterator(gif)]  # Extraer los frames
 
-# Extraer los frames del GIF
-frames = [ImageTk.PhotoImage(frame.convert("RGBA")) for frame in ImageSequence.Iterator(gif)]
-gif_running = False  # Variable para controlar si la animación está activa
+gif_running = False  # Variable para controlar la animación
 
-# Crear el Label para mostrar la animación
-label_gif = tk.Label(root, bg="#2c3e50")
+# Crear Label para mostrar la imagen/GIF
+label_gif = tk.Label(root, bg="#2c3e50", image=imagen_estatica)
 label_gif.grid(row=0, column=0, padx=10, pady=10)
 
-# Función para animar el GIF solo cuando se presiona "Predecir"
+# Función para animar el GIF
 def animar_gif(indice=0):
     global gif_running
-    if not gif_running:  # Detener la animación si no se debe mover
+    if not gif_running:
         return
-    frame = frames[indice]  # Obtener el frame actual
-    label_gif.config(image=frame)  # Mostrar el frame en el Label
-    root.after(100, animar_gif, (indice + 1) % len(frames))  # Llamar al siguiente frame
+    frame = frames[indice]
+    label_gif.config(image=frame)
+    root.after(100, animar_gif, (indice + 1) % len(frames))  # Mostrar el siguiente frame
 
 # Función para realizar una predicción con los pasos de resolución
 def predecir():
@@ -85,16 +84,16 @@ def predecir():
         messagebox.showerror("Error", "El modelo no está entrenado.")
         return
 
+    # Cambiar la imagen a GIF antes de predecir
+    gif_running = True
+    animar_gif()
+
     tipo, operacion = predecir_expresion(model, tokenizer, max_len, tipo_to_index, operacion_to_index, expresion_test)
     pasos = resolver_expresion(expresion_test)  # Generar los pasos de resolución
 
     resultado.set(f"Tipo: {tipo}, Operación: {operacion}")
     pasos_texto.delete("1.0", tk.END)
     pasos_texto.insert(tk.END, "\n".join(pasos))
-
-    # Iniciar la animación del GIF solo cuando se hace una predicción
-    gif_running = True
-    animar_gif()
 
 # Crear el frame de la UI a la derecha
 frame_contenido = tk.Frame(root, bg="#34495e", padx=20, pady=20)
