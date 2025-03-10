@@ -76,7 +76,7 @@ def animar_gif(indice=0):
 
 # Configuración de la ventana principal
 root = tk.Tk()
-root.title("Analizador de Expresiones Algebraicas")
+root.title("Calculadora Algebraica con IA")
 root.configure(bg="#2C3E50")  # Fondo oscuro para mejor contraste
 
 # Maximizar la ventana sin ocultar la barra de tareas (pantalla casi completa)
@@ -97,7 +97,7 @@ if gif.size[0] > max_size[0] or gif.size[1] > max_size[1]:
 
 imagen_estatica = gif.copy().convert("RGBA")  # Copiar el tamaño del GIF para la imagen estática
 imagen_estatica = ImageTk.PhotoImage(imagen_estatica)  # Convertir a formato adecuado para Tkinter
-logo_udo = Image.open("logo_udo.jpg").resize((150, 150))  # Ajustar tamaño
+logo_udo = Image.open("logo-udo.png").resize((150, 150))  # Ajustar tamaño
 logo_udo = ImageTk.PhotoImage(logo_udo)
 
 # Extraer los frames del GIF correctamente
@@ -115,7 +115,7 @@ frame_contenido = tk.Frame(root, bg="#34495E", padx=20, pady=20)
 frame_contenido.grid(row=0, column=1, padx=30, pady=30)
 
 # Elementos de la UI dentro del frame de contenido
-title_label = tk.Label(frame_contenido, text="Analice y resuelva su expresión con IA", font=("Helvetica", 22, "bold"), fg="#ECF0F1", bg="#34495E")
+title_label = tk.Label(frame_contenido, text="Calculadora Algebraica", font=("Helvetica", 22, "bold"), fg="#ECF0F1", bg="#34495E")
 title_label.grid(row=0, column=1, pady=20)
 
 btn_cargar = ttk.Button(frame_contenido, text="Cargar Datos", command=cargar_datos, width=20, style="TButton")
@@ -152,20 +152,24 @@ label_logo.pack(pady=10)
 
 # Texto de presentación
 texto_presentacion = """
-Universidad de Oriente Nucleo Nueva Esparta
-Introduccion a la inteligencia artificial
-Análisis y solución de expresiones algebraicas usando IA.
+Universidad de Oriente 
+\nNucleo Nueva Esparta
+\nEscuela de Ingeniería y Ciencias Aplicadas
+\nDepartamento de Informática
+\nIntroduccion a la inteligencia artificial
+\n\nAnálisis y solución de expresiones algebraicas usando IA.
  
 
 
 Desarrollado por:
 Isaac Hernandez C.I 30563299
 Jose Silva C.I 30230054
-Emmanuel Aponte 
+Emmanuel Aponte C.I 29789773
 
 """
-label_presentacion = tk.Label(frame_presentacion, text=texto_presentacion, font=("Helvetica", 14), fg="white", bg="#2C3E50", justify="center")
+label_presentacion = tk.Label(frame_presentacion, text=texto_presentacion, font=("Helvetica", 10), fg="white", bg="#2C3E50", justify="center")
 label_presentacion.pack(pady=10)
+label_presentacion.config(justify="center")
 
 # Estilo de botones y entrada
 style = ttk.Style()
